@@ -1,13 +1,12 @@
-
 /* ==========================================
    PARKEATE
-   SC-502
-   Style Global
-========================================== */
+   SC-502 Desarrollo de Aplicaciones Web
+   style.css
+   ========================================== */
 
-/* ==========================
+/* ==========================================
    VARIABLES
-========================== */
+========================================== */
 
 :root{
 
@@ -19,51 +18,121 @@
     --color-blanco:#FFFFFF;
     --color-borde:#E5E5E5;
 
-    --fuente-titulo:'Poppins', sans-serif;
-    --fuente-texto:'Inter', sans-serif;
+    --fuente-titulo:'Poppins',sans-serif;
+    --fuente-texto:'Inter',sans-serif;
 
     --sombra:0 8px 25px rgba(0,0,0,.08);
+    --radio:18px;
+    --transicion:.30s;
 
 }
 
-/* ==========================
+/* ==========================================
    RESET
-========================== */
+========================================== */
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
-
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
 
     font-family:var(--fuente-texto);
+
     background:var(--color-fondo);
+
     color:var(--color-texto);
+
+    line-height:1.6;
 
 }
 
-/* ==========================
-   UTILIDADES
-========================== */
+img{
 
-.titulo-seccion{
+    max-width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+/* ==========================================
+   TIPOGRAFÍAS
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
 
     font-family:var(--fuente-titulo);
-    font-weight:700;
+
     color:var(--color-oscuro);
+
     margin-bottom:15px;
 
 }
 
-.texto-centro{
+p{
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================================
+   UTILIDADES
+========================================== */
+
+.titulo-seccion{
+
     text-align:center;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.subtitulo-seccion{
+
+    text-align:center;
+
+    color:#777;
+
+    max-width:700px;
+
+    margin:auto;
+
+    margin-bottom:60px;
+
 }
 
 .seccion{
@@ -72,22 +141,46 @@ body{
 
 }
 
-/* ==========================
+.sombra{
+
+    box-shadow:var(--sombra);
+
+}
+
+.rounded-xl{
+
+    border-radius:var(--radio);
+
+}
+
+.fade-up{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* ==========================================
    NAVBAR
-========================== */
+========================================== */
 
 .navbar{
 
     background:var(--color-blanco);
+
     box-shadow:var(--sombra);
+
+    transition:var(--transicion);
 
 }
 
 .navbar-brand{
 
     font-family:var(--fuente-titulo);
-    font-size:1.8rem;
+
+    font-size:1.9rem;
+
     font-weight:700;
+
     color:var(--color-primario)!important;
 
 }
@@ -95,8 +188,10 @@ body{
 .nav-link{
 
     color:var(--color-oscuro)!important;
+
     font-weight:600;
-    transition:.3s;
+
+    transition:var(--transicion);
 
 }
 
@@ -106,19 +201,39 @@ body{
 
 }
 
-/* ==========================
+.nav-link.active{
+
+    color:var(--color-primario)!important;
+
+}
+
+.navbar-toggler{
+
+    border:none;
+
+}
+
+.navbar-toggler:focus{
+
+    box-shadow:none;
+
+}
+/* ==========================================
    HERO
-========================== */
+========================================== */
 
 .hero{
 
     background:url("https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&w=1800&q=80");
+
     background-size:cover;
+
     background-position:center;
 
     min-height:90vh;
 
     display:flex;
+
     align-items:center;
 
     position:relative;
@@ -131,8 +246,7 @@ body{
 
     position:absolute;
 
-    width:100%;
-    height:100%;
+    inset:0;
 
     background:rgba(45,64,89,.65);
 
@@ -141,35 +255,66 @@ body{
 .hero-contenido{
 
     position:relative;
+
     z-index:2;
 
-    color:white;
+    color:var(--color-blanco);
 
     max-width:650px;
 
 }
 
-.hero h1{
-
-    font-family:var(--fuente-titulo);
+.hero-contenido h1{
 
     font-size:3.6rem;
+
+    color:white;
 
     font-weight:700;
 
 }
 
-.hero p{
+.hero-contenido p{
 
     margin:25px 0;
 
     font-size:1.15rem;
 
+    color:#f1f1f1;
+
 }
 
-/* ==========================
+/* ==========================================
+   HERO INTERNO
+========================================== */
+
+.hero-buscar{
+
+    background:linear-gradient(135deg,#ffffff,#f5f7fa);
+
+    border-bottom:1px solid var(--color-borde);
+
+}
+
+.hero-buscar h1{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+}
+
+.hero-buscar p{
+
+    max-width:750px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
    BOTONES
-========================== */
+========================================== */
 
 .btn-parkeate{
 
@@ -185,17 +330,17 @@ body{
 
     font-weight:600;
 
-    transition:.3s;
+    transition:var(--transicion);
 
 }
 
 .btn-parkeate:hover{
 
-    background:#e54c51;
-
-    transform:translateY(-3px);
+    background:#e5484d;
 
     color:white;
+
+    transform:translateY(-3px);
 
 }
 
@@ -203,43 +348,71 @@ body{
 
     background:var(--color-secundario);
 
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px 32px;
+
+    transition:var(--transicion);
+
 }
 
 .btn-secundario:hover{
 
     background:#00897d;
 
+    color:white;
+
+    transform:translateY(-3px);
+
 }
 
-/* ==========================
+.btn-outline-parkeate{
+
+    border:2px solid var(--color-primario);
+
+    color:var(--color-primario);
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+.btn-outline-parkeate:hover{
+
+    background:var(--color-primario);
+
+    color:white;
+
+}
+
+/* ==========================================
    BUSCADOR
-========================== */
+========================================== */
 
 .buscador{
 
     background:white;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:25px;
+    padding:28px;
 
-    margin-top:-60px;
+    margin-top:-70px;
 
     position:relative;
 
-    z-index:3;
+    z-index:10;
 
     box-shadow:var(--sombra);
 
 }
 
-.buscador .form-control{
-
-    height:55px;
-
-    border-radius:12px;
-
-}
+.buscador .form-control,
 
 .buscador .form-select{
 
@@ -249,25 +422,101 @@ body{
 
 }
 
-/* ==========================
+.buscador label{
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   CONTADORES
+========================================== */
+
+.contador{
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    color:var(--color-primario);
+
+}
+
+.estadistica{
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.estadistica p{
+
+    margin-top:10px;
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.cta{
+
+    background:linear-gradient(135deg,
+    var(--color-primario),
+    #ff7a7f);
+
+    color:white;
+
+    border-radius:25px;
+
+    padding:60px;
+
+    text-align:center;
+
+}
+
+.cta h2{
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+.cta p{
+
+    color:#fff;
+
+    max-width:700px;
+
+    margin:auto;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================
    BENEFICIOS
-========================== */
+========================================== */
 
 .card-beneficio{
 
-    background:white;
+    background:var(--color-blanco);
 
     border:none;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:30px;
+    padding:35px 25px;
 
     text-align:center;
 
     box-shadow:var(--sombra);
 
-    transition:.3s;
+    transition:var(--transicion);
 
     height:100%;
 
@@ -291,118 +540,167 @@ body{
 
 .card-beneficio h4{
 
-    font-family:var(--fuente-titulo);
-
-    color:var(--color-oscuro);
-
     margin-bottom:15px;
 
 }
-/* ==========================
-   PARQUEOS DESTACADOS
-========================== */
 
-.card-parqueo{
+/* ==========================================
+   TARJETAS DE PARQUEOS
+========================================== */
 
-    background:var(--color-blanco);
+.tarjeta-parqueo{
 
     border:none;
 
-    border-radius:18px;
+    border-radius:20px;
 
     overflow:hidden;
 
+    transition:.35s;
+
     box-shadow:var(--sombra);
 
-    transition:.3s;
-
-    height:100%;
+    background:#fff;
 
 }
 
-.card-parqueo:hover{
+.tarjeta-parqueo:hover{
 
     transform:translateY(-8px);
 
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
 }
 
-.card-parqueo img{
-
-    width:100%;
+.tarjeta-parqueo img{
 
     height:220px;
 
+    width:100%;
+
     object-fit:cover;
+
+    transition:.4s;
 
 }
 
-.info-parqueo{
+.tarjeta-parqueo:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.tarjeta-parqueo .card-body{
 
     padding:22px;
 
 }
 
-.info-parqueo h4{
-
-    font-family:var(--fuente-titulo);
-
-    color:var(--color-oscuro);
-
-    margin-bottom:10px;
-
-}
-
-.info-parqueo p{
-
-    margin-bottom:8px;
-
-}
-
-.precio{
-
-    color:var(--color-primario);
-
-    font-size:1.2rem;
+.tarjeta-parqueo h5{
 
     font-weight:700;
 
 }
 
-/* ==========================
+.tarjeta-parqueo p{
+
+    margin-bottom:10px;
+
+}
+
+.tarjeta-parqueo .card-footer{
+
+    background:#fff;
+
+    border:none;
+
+    padding:20px;
+
+}
+
+/* ==========================================
+   FAVORITOS
+========================================== */
+
+.favorito{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.favorito:hover{
+
+    transform:scale(1.25);
+
+}
+
+.bi-heart-fill{
+
+    color:#FF5A5F !important;
+
+}
+
+/* ==========================================
+   PRECIO
+========================================== */
+
+.precio{
+
+    color:var(--color-primario);
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
    BADGES
-========================== */
+========================================== */
 
-.badge-disponible{
-
-    background:var(--color-secundario);
-
-    color:white;
-
-    padding:8px 16px;
+.badge{
 
     border-radius:30px;
 
-    font-size:.85rem;
+    padding:8px 14px;
+
+    font-weight:600;
 
 }
 
-.badge-ocupado{
+.badge.bg-success{
 
-    background:#dc3545;
-
-    color:white;
-
-    padding:8px 16px;
-
-    border-radius:30px;
-
-    font-size:.85rem;
+    background:var(--color-secundario)!important;
 
 }
 
-/* ==========================
-   COMO FUNCIONA
-========================== */
+.badge.bg-danger{
+
+    background:#dc3545!important;
+
+}
+
+/* ==========================================
+   ESTRELLAS
+========================================== */
+
+.bi-star-fill{
+
+    color:#ffc107;
+
+}
+
+.bi-star{
+
+    color:#ffc107;
+
+}
+
+/* ==========================================
+   CÓMO FUNCIONA
+========================================== */
 
 .paso{
 
@@ -422,7 +720,7 @@ body{
 
     background:var(--color-primario);
 
-    color:white;
+    color:#fff;
 
     display:flex;
 
@@ -430,84 +728,135 @@ body{
 
     align-items:center;
 
-    margin:auto;
+    margin:auto auto 20px;
 
     font-size:1.6rem;
 
-
-body{
-    background:#f4f7fa;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-}
-
-/*=========================
-        NAVBAR
-==========================*/
-
-.navbar{
-    background:#0d6efd;
-    box-shadow:0 3px 8px rgba(0,0,0,.15);
-}
-
-.navbar-brand{
-    color:#fff !important;
-    font-weight:bold;
-    font-size:1.6rem;
-}
-
-.nav-link{
-    color:white !important;
-    transition:.3s;
-}
-
-.nav-link:hover{
-    color:#d6f5ff !important;
-}
-
-/*=========================
-      HERO / ENCABEZADO
-==========================*/
-
-.hero{
-    background:linear-gradient(135deg,#0d6efd,#198754);
-    color:white;
-    text-align:center;
-    padding:60px 20px;
-}
-
-.hero h1{
-    font-size:2.7rem;
-    font-weight:bold;
-
-    margin-bottom:20px;
+    font-weight:700;
 
 }
 
+/* ==========================================
+   TESTIMONIOS
+========================================== */
 
-.paso h4{
+.testimonio{
 
-    font-family:var(--fuente-titulo);
+    background:#fff;
 
-    color:var(--color-oscuro);
+    padding:30px;
 
-    margin-bottom:15px;
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+    height:100%;
 
 }
 
-/* ==========================
+.testimonio img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.testimonio h5{
+
+    margin-top:15px;
+
+    margin-bottom:5px;
+
+}
+
+.testimonio p{
+
+    font-style:italic;
+
+}
+
+/* ==========================================
+   TABLAS
+========================================== */
+
+.table{
+
+    background:#fff;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.table thead{
+
+    background:var(--color-oscuro);
+
+    color:#fff;
+
+}
+
+.table th{
+
+    border:none;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+}
+
+/* ==========================================
+   PAGINAS INTERNAS
+========================================== */
+
+.card{
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.card-header{
+
+    background:transparent;
+
+    border:none;
+
+}
+
+.card-footer{
+
+    background:transparent;
+
+    border:none;
+
+}
+/* ==========================================
    FORMULARIOS
-========================== */
+========================================== */
 
 .form-control,
 .form-select{
 
-    border-radius:12px;
-
     border:1px solid var(--color-borde);
 
+    border-radius:12px;
+
     padding:12px;
+
+    transition:var(--transicion);
 
 }
 
@@ -516,61 +865,282 @@ body{
 
     border-color:var(--color-primario);
 
-    box-shadow:0 0 0 .2rem rgba(255,90,95,.20);
+    box-shadow:0 0 0 .2rem rgba(255,90,95,.18);
 
 }
 
-/* ==========================
+.form-label{
+
+    font-weight:600;
+
+    color:var(--color-oscuro);
+
+}
+
+.form-check-input:checked{
+
+    background:var(--color-primario);
+
+    border-color:var(--color-primario);
+
+}
+
+/* ==========================================
+   LOGIN
+========================================== */
+
+#loginForm{
+
+    margin-top:15px;
+
+}
+
+#loginForm .btn{
+
+    padding:13px;
+
+}
+
+#loginForm hr{
+
+    opacity:.15;
+
+}
+
+/* ==========================================
+   REGISTRO
+========================================== */
+
+#registroForm{
+
+    margin-top:10px;
+
+}
+
+#registroForm .btn{
+
+    padding:13px;
+
+}
+
+/* ==========================================
+   PERFIL
+========================================== */
+
+.avatar-perfil{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:var(--color-primario);
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:60px;
+
+    margin:auto;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+#perfilForm{
+
+    margin-top:20px;
+
+}
+
+#perfilForm hr{
+
+    opacity:.15;
+
+}
+
+#mensajePerfil{
+
+    border-radius:15px;
+
+}
+
+/* ==========================================
+   RECUPERAR
+========================================== */
+
+#recuperarForm{
+
+    margin-top:15px;
+
+}
+
+#mensajeRecuperacion{
+
+    border-radius:15px;
+
+}
+
+/* ==========================================
+   FAVORITOS
+========================================== */
+
+.favorito-activo{
+
+    color:var(--color-primario);
+
+}
+
+/* ==========================================
+   ALERTAS
+========================================== */
+
+.alert{
+
+    border:none;
+
+    border-radius:15px;
+
+    box-shadow:var(--sombra);
+
+}
+
+/* ==========================================
+   MODALES
+========================================== */
+
+.modal-content{
+
+    border:none;
+
+    border-radius:20px;
+
+}
+
+.modal-header{
+
+    border:none;
+
+}
+
+.modal-footer{
+
+    border:none;
+
+}
+
+/* ==========================================
+   PAGINAS INTERNAS
+========================================== */
+
+.hero-buscar .badge{
+
+    font-size:.95rem;
+
+}
+
+.hero-buscar .lead{
+
+    color:#666;
+
+}
+
+.card{
+
+    transition:var(--transicion);
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   ICONOS
+========================================== */
+
+.bi{
+
+    transition:var(--transicion);
+
+}
+
+/* ==========================================
    FOOTER
-========================== */
+========================================== */
 
-.footer{
-    background: #31445f;
-    color: #fff;
+footer{
+
+    background:var(--color-oscuro);
+
+    color:var(--color-blanco);
+
+    padding:60px 0 25px;
+
 }
 
-.footer h3,
-.footer h5{
-    color: #fff;
+footer h3,
+footer h5{
+
+    color:white;
+
 }
 
-.footer p,
-.footer li,
-.footer .text-muted{
-    color: #dce3ec !important;
+footer p{
+
+    color:#d8d8d8;
+
 }
 
-.footer a{
-    color: #fff;
-    text-decoration: none;
-    transition: .3s;
+footer ul{
+
+    padding-left:0;
+
 }
 
-.footer a:hover{
-    color: #4dabff;
+footer li{
+
+    margin-bottom:10px;
+
 }
 
-.footer i{
-    color: #fff;
+footer a{
+
+    color:#d8d8d8;
+
+    transition:var(--transicion);
+
 }
 
-.footer hr{
-    border-color: rgba(255,255,255,.2);
+footer a:hover{
+
+    color:var(--color-primario);
+
 }
 
-.footer .text-center{
-    color: #dce3ec !important;
+footer i{
+
+    color:var(--color-primario);
+
 }
 
-/* ==========================
+footer hr{
+
+    border-color:rgba(255,255,255,.15);
+
+}
+
+/* ==========================================
    ANIMACIONES
-========================== */
-
-.fade-up{
-
-    animation:fadeUp .8s ease;
-
-}
+========================================== */
 
 @keyframes fadeUp{
 
@@ -592,11 +1162,43 @@ body{
 
 }
 
-/* ==========================
-   RESPONSIVE
-========================== */
+@keyframes zoomIn{
 
-@media(max-width:991px){
+    from{
+
+        transform:scale(.95);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.animacion{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.zoom{
+
+    animation:zoomIn .5s ease;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
 
     .hero{
 
@@ -606,25 +1208,15 @@ body{
 
     }
 
-    .hero h1{
+    .hero-contenido{
 
-        font-size:2.7rem;
-
-    }
-
-}
-
-@media(max-width:768px){
-
-    .hero{
-
-        min-height:70vh;
+        margin:auto;
 
     }
 
-    .hero h1{
+    .hero-contenido h1{
 
-        font-size:2.2rem;
+        font-size:2.8rem;
 
     }
 
@@ -634,9 +1226,47 @@ body{
 
     }
 
-    .titulo-seccion{
+}
 
-        text-align:center;
+@media(max-width:768px){
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+    .hero-contenido h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .hero-buscar h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .contador{
+
+        font-size:2rem;
+
+    }
+
+    .tarjeta-parqueo img{
+
+        height:200px;
+
+    }
+
+    .avatar-perfil{
+
+        width:90px;
+
+        height:90px;
+
+        font-size:45px;
 
     }
 
@@ -644,327 +1274,44 @@ body{
 
 @media(max-width:576px){
 
-    .hero h1{
+    .hero{
+
+        min-height:65vh;
+
+    }
+
+    .hero-contenido h1{
 
         font-size:1.9rem;
 
     }
 
-    .btn-parkeate{
+    .hero-contenido p{
+
+        font-size:1rem;
+
+    }
+
+    .btn-parkeate,
+    .btn-secundario,
+    .btn-outline-parkeate{
 
         width:100%;
 
         margin-bottom:10px;
-.hero p{
-    font-size:1.1rem;
-    margin-top:10px;
-}
-
-/*=========================
-      CONTENEDORES
-==========================*/
-
-.container-form{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px 15px;
-}
-
-.card-form{
-
-    background:white;
-    width:100%;
-    max-width:520px;
-
-    border-radius:15px;
-
-    padding:35px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-
-}
-
-.card-form h2{
-
-    text-align:center;
-
-    margin-bottom:25px;
-
-    color:#0d6efd;
-
-    font-weight:bold;
-
-}
-
-/*=========================
-      INPUTS
-==========================*/
-
-.form-label{
-
-    font-weight:600;
-
-    color:#444;
-
-}
-
-.form-control{
-
-    border-radius:10px;
-
-    padding:10px;
-
-}
-
-.form-control:focus{
-
-    border-color:#198754;
-
-    box-shadow:0 0 5px rgba(25,135,84,.4);
-
-}
-
-/*=========================
-      BOTONES
-==========================*/
-
-.btn-primary{
-
-    background:#0d6efd;
-
-    border:none;
-
-    border-radius:10px;
-
-    padding:10px;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-.btn-primary:hover{
-
-    background:#0b5ed7;
-
-}
-
-.btn-success{
-
-    border-radius:10px;
-
-    font-weight:bold;
-
-}
-
-.btn-secondary{
-
-    border-radius:10px;
-
-}
-
-/*=========================
-      LINKS
-==========================*/
-
-.link{
-
-    text-align:center;
-
-    margin-top:15px;
-
-}
-
-.link a{
-
-    text-decoration:none;
-
-    color:#198754;
-
-    font-weight:bold;
-
-}
-
-.link a:hover{
-
-    text-decoration:underline;
-
-}
-
-/*=========================
-        PERFIL
-==========================*/
-
-.profile-card{
-
-    background:white;
-
-    max-width:850px;
-
-    margin:auto;
-
-    border-radius:15px;
-
-    padding:40px;
-
-    box-shadow:0 10px 20px rgba(0,0,0,.10);
-
-}
-
-.profile-photo{
-
-    width:140px;
-
-    height:140px;
-
-    border-radius:50%;
-
-    background:#dee2e6;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin:auto;
-
-    font-size:55px;
-
-    color:#6c757d;
-
-    margin-bottom:25px;
-
-}
-
-.profile-title{
-
-    text-align:center;
-
-    color:#0d6efd;
-
-    margin-bottom:30px;
-
-    font-weight:bold;
-
-}
-
-/*=========================
-        ALERTAS
-==========================*/
-
-.alert{
-
-    border-radius:10px;
-
-}
-
-/*=========================
-        FOOTER
-==========================*/
-
-footer{
-
-    background:#212529;
-
-    color:white;
-
-    text-align:center;
-
-    padding:18px;
-
-    margin-top:auto;
-
-}
-
-/*=========================
-      RESPONSIVE
-==========================*/
-
-@media(max-width:768px){
-
-.hero h1{
-
-    font-size:2rem;
-
-}
-
-.card-form{
-
-    padding:25px;
-
-}
-
-.profile-card{
-
-    padding:25px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.hero{
-
-    padding:40px 15px;
-
-}
-
-.hero h1{
-
-    font-size:1.7rem;
-
-}
-
-.card-form{
-
-    border-radius:10px;
-
-}
-
-.profile-photo{
-
-    width:110px;
-
-    height:110px;
-
-    font-size:40px;
-
-}
-
-}
-
-/*=========================
-      ANIMACIONES
-==========================*/
-
-.card-form,
-.profile-card{
-
-    animation:aparecer .6s ease;
-
-}
-
-@keyframes aparecer{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(20px);
 
     }
 
-    to{
+    .buscador{
 
-        opacity:1;
-
-        transform:translateY(0);
+        padding:20px;
 
     }
 
-}}}}
+    .card{
+
+        margin-bottom:20px;
+
+    }
+
+}
